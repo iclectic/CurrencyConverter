@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body{
+          margin-top: 60px;
+          background:#D3D3D3;
+          color:#fff;
+      }
+    </style>
+    <title>Currency Converter</title>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-6 offset-md-3">
+               <h1 class="display-4 text-center mb-2">
+                     Currency Converter
+               </h1>
+               <form>
+                   <div class="form-group">
+                       <input id="nairaInput" type="number" class="form-control form-control-lg" placeholder="Enter Nigerian Naira Value...">
+                   </div>
+               </form>
+               <div id="output">
+                   <div class="card bg-success mb-2">
+                       <div class="card-block">
+                           <h4>
+                               Dollars:
+                           </h4>
+                           <div id="dollarsOutput">
+
+                           </div>
+                       </div>
+                   </div>
+                   <div class="card bg-info mb-2">
+                    <div class="card-block">
+                        <h4>
+                              Euro:
+                        </h4>
+                        <div id="euroOutput">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-primary mb-2">
+                    <div class="card-block">
+                        <h4>
+                             Yuan:
+                        </h4>
+                        <div id="yuanOutput">
+
+                        </div>
+                    </div>
+                </div>
+               </div>
+           </div>
+       </div>
+   </div> 
+   
+   <script>
+       document.getElementById('output').style.visibility = 'hidden';
+      document.getElementById('nairaInput').addEventListener('input',function(e){
+        document.getElementById('output').style.visibility = 'visible';
+      let naira = e.target.value;
+      document.getElementById('dollarsOutput').innerHTML = naira/362.50;
+      document.getElementById('euroOutput').innerHTML = naira/421.28;
+      document.getElementById('yuanOutput').innerHTML = naira/52.77;
+
+      });
+      
+   </script>
+</body>
+</html>
